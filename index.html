@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlatform - Nền tảng Giáo dục 4.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">EduPlatform</div>
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#courses">Khóa học</a>
+            <a href="#resources">Tài nguyên</a>
+            <a href="#news">Tin tức</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn btn-primary">Đăng nhập</button>
+            <button class="btn btn-secondary">Đăng ký</button>
+        </div>
+        
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nền tảng Giáo dục 4.0</h1>
+            <p>Kết nối tri thức - Định hình tương lai</p>
+            <div style="margin-top: 2rem;">
+                <button class="btn btn-primary">Khám phá ngay</button>
+                <button class="btn btn-secondary">Xem video</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-video feature-icon"></i>
+                <h3>Lớp học trực tuyến</h3>
+                <p>Học mọi lúc, mọi nơi với hệ thống học trực tuyến</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-book-open feature-icon"></i>
+                <h3>Thư viện số</h3>
+                <p>10,000+ tài liệu, giáo trình miễn phí</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users feature-icon"></i>
+                <h3>Cộng đồng</h3>
+                <p>Kết nối với chuyên gia và học sinh toàn cầu</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title">Khóa Học Nổi Bật</h2>
+            
+            <!-- Bộ lọc -->
+            <div class="course-filters">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="k12">Phổ thông</button>
+                <button class="filter-btn" data-filter="university">Đại học</button>
+                <button class="filter-btn" data-filter="skill">Kỹ năng</button>
+            </div>
+    
+            <!-- Danh sách khóa học -->
+            <div class="course-grid">
+                <!-- Khóa học 1 -->
+                <div class="course-card" data-category="k12">
+                    <div class="course-thumbnail">
+                        <img src="./assets/images/toan.jpg" alt="Toán 12">
+                        <span class="price-tag">Miễn phí</span>
+                    </div>
+                    <div class="course-content">
+                        <h3>Toán lớp 12 - Ôn thi THPT Quốc Gia</h3>
+                        <div class="course-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.9
+                                <span class="reviews">(128 đánh giá)</span>
+                            </span>
+                            <span class="duration"><i class="fas fa-clock"></i> 45 bài giảng</span>
+                        </div>
+                        <p class="course-description">Khóa học toàn diện chương trình Toán 12 với các chuyên đề giải tích và hình học...</p>
+                        <div class="instructor">
+                            <img src="https://via.placeholder.com/40/2A4B7C/FFFFFF?text=GV" class="avatar">
+                            <span>Th.S Nguyễn Văn A</span>
+                        </div>
+                        <button class="btn btn-primary btn-block">Xem chi tiết</button>
+                    </div>
+                </div>
+    
+                <!-- Khóa học 2 -->
+                <div class="course-card" data-category="university">
+                    <div class="course-thumbnail">
+                        <img src="./assets/images/tin.jpg" alt="Lập trình">
+                        <span class="price-tag">499.000đ</span>
+                    </div>
+                    <div class="course-content">
+                        <h3>Lập trình Python từ Zero đến Hero</h3>
+                        <div class="course-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.8
+                                <span class="reviews">(356 đánh giá)</span>
+                            </span>
+                            <span class="duration"><i class="fas fa-clock"></i> 32 bài giảng</span>
+                        </div>
+                        <p class="course-description">Master Python với các dự án thực tế: Web, Data Analysis, Automation...</p>
+                        <div class="instructor">
+                            <img src="https://via.placeholder.com/40/FFA726/FFFFFF?text=GV" class="avatar">
+                            <span>TS. Trần Thị B</span>
+                        </div>
+                        <button class="btn btn-primary btn-block">Đăng ký ngay</button>
+                    </div>
+                </div>
+    
+                <!-- Thêm các khóa học khác tương tự -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript cho bộ lọc
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Xóa class active
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                
+                // Thêm class active cho nút được click
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                const courses = document.querySelectorAll('.course-card');
+                
+                courses.forEach(course => {
+                    if (filter === 'all' || course.dataset.category === filter) {
+                        course.style.display = 'block';
+                    } else {
+                        course.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Liên hệ</h4>
+                <p>123 Đường Giáo Dục, Thái Nguyên</p>
+                <p>contact@eduplatform.vn</p>
+                <p>+84 123 456 789</p>
+            </div>
+            <div>
+                <h4>Liên kết nhanh</h4>
+                <p>FAQ</p>
+                <p>Chính sách</p>
+                <p>Blog</p>
+            </div>
+            <div>
+                <h4>Mạng xã hội</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Nhận tin mới</h4>
+                <input type="email" placeholder="Nhập email của bạn">
+                <button class="btn btn-primary" style="margin-top: 1rem;">Đăng ký</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

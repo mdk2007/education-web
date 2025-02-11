@@ -1,0 +1,338 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #2A4B7C;
+    font-weight: 700;
+}
+
+nav a {
+    color: #2A4B7C;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 500;
+}
+
+.auth-buttons .btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(42,75,124,0.8), rgba(42,75,124,0.8)), 
+                url('/Education\ web/assets/images/photo-1581726707445-75cbe4efc586.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 5%;
+    background: #f8f9fa;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 5rem 5%;
+    background: #fff;
+}
+
+.timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.step {
+    text-align: center;
+    width: 23%;
+    padding: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: #2A4B7C;
+    color: #fff;
+    padding: 4rem 5%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-steps {
+        flex-wrap: wrap;
+    }
+
+    .step {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #FFA726;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #4CAF50;
+    color: #fff;
+}
+
+/* Header Hover Effects */
+.logo {
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #FFA726;
+    transform: scale(1.05);
+}
+
+nav a {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFA726;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFA726;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons .btn {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.btn-primary:hover {
+    background: #FF9800;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,167,38,0.3);
+}
+
+.btn-secondary:hover {
+    background: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76,175,80,0.3);
+}
+
+.courses {
+    padding: 5rem 5%;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2A4B7C;
+    margin-bottom: 3rem;
+}
+
+.course-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border: 2px solid #2A4B7C;
+    border-radius: 25px;
+    background: transparent;
+    color: #2A4B7C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #2A4B7C;
+    color: #fff;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-thumbnail {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.course-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.price-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #FFA726;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.course-content {
+    padding: 1.5rem;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.rating {
+    color: #FFA726;
+}
+
+.instructor {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-btn {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
