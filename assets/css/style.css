@@ -43,7 +43,7 @@ nav a {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(42,75,124,0.8), rgba(42,75,124,0.8)), 
-                url('/Education\ web/assets/images/photo-1581726707445-75cbe4efc586.jpg') center/cover;
+                url('/Education\ web/assets/images/hero.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
