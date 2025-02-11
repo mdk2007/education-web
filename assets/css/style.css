@@ -39,11 +39,94 @@ nav a {
     margin-left: 1rem;
 }
 
+/* CSS cho modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #2A4B7C;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #FFA726;
+    transform: rotate(90deg);
+}
+
+.auth-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2A4B7C;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,0.3);
+}
+
+.switch-form {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.switch-form a {
+    color: #FFA726;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 /* Hero Section */
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(42,75,124,0.8), rgba(42,75,124,0.8)), 
-                url('/Education\ web/assets/images/hero.jpg') center/cover;
+                url('https://images.unsplash.com/photo-1581726707445-75cbe4efc586') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;

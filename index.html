@@ -12,7 +12,7 @@
     <header>
         <div class="logo">EduPlatform</div>
         <nav>
-            <a href="#home">Trang chủ</a>
+            <a href="#">Trang chủ</a>
             <a href="#courses">Khóa học</a>
             <a href="#resources">Tài nguyên</a>
             <a href="#news">Tin tức</a>
@@ -22,6 +22,92 @@
             <button class="btn btn-secondary">Đăng ký</button>
         </div>
         
+        <div class="modal" id="loginModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Đăng nhập</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu:</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </form>
+                <p class="switch-form">Chưa có tài khoản? <a href="#" onclick="showRegister()">Đăng ký ngay</a></p>
+            </div>
+        </div>
+        
+        <div class="modal" id="registerModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Đăng ký</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label>Tên đầy đủ:</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu:</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Đăng ký</button>
+                </form>
+                <p class="switch-form">Đã có tài khoản? <a href="#" onclick="showLogin()">Đăng nhập ngay</a></p>
+            </div>
+        </div>
+
+        <script>
+            // Xử lý modal
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            const closeBtns = document.querySelectorAll('.close');
+        
+            // Mở modal đăng nhập
+            document.querySelector('.btn-primary').addEventListener('click', () => {
+                loginModal.style.display = 'block';
+            });
+        
+            // Mở modal đăng ký
+            document.querySelector('.btn-secondary').addEventListener('click', () => {
+                registerModal.style.display = 'block';
+            });
+        
+            // Đóng modal
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                });
+            });
+        
+            // Đóng khi click bên ngoài
+            window.onclick = function(event) {
+                if (event.target.classList.contains('modal')) {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                }
+            }
+        
+            // Chuyển đổi giữa các form
+            function showRegister() {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            }
+        
+            function showLogin() {
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            }
+        </script>
+
     </header>
 
     <section class="hero">
@@ -87,7 +173,7 @@
                         <p class="course-description">Khóa học toàn diện chương trình Toán 12 với các chuyên đề giải tích và hình học...</p>
                         <div class="instructor">
                             <img src="https://via.placeholder.com/40/2A4B7C/FFFFFF?text=GV" class="avatar">
-                            <span>Th.S Nguyễn Văn A</span>
+                            <span>Th.S Nguyễn Hải Đăng</span>
                         </div>
                         <button class="btn btn-primary btn-block">Xem chi tiết</button>
                     </div>
@@ -111,7 +197,7 @@
                         <p class="course-description">Master Python với các dự án thực tế: Web, Data Analysis, Automation...</p>
                         <div class="instructor">
                             <img src="https://via.placeholder.com/40/FFA726/FFFFFF?text=GV" class="avatar">
-                            <span>TS. Trần Thị B</span>
+                            <span>TS. Phan Minh Anh</span>
                         </div>
                         <button class="btn btn-primary btn-block">Đăng ký ngay</button>
                     </div>
@@ -150,9 +236,9 @@
         <div class="footer-grid">
             <div>
                 <h4>Liên hệ</h4>
-                <p>123 Đường Giáo Dục, Thái Nguyên</p>
-                <p>contact@eduplatform.vn</p>
-                <p>+84 123 456 789</p>
+                <p>THPT Chuyên Thái Nguyên, Thái Nguyên</p>
+                <p>mongduykhanh2007@gmail.com</p>
+                <p>+84 332 236 523</p>
             </div>
             <div>
                 <h4>Liên kết nhanh</h4>
