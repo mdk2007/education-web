@@ -232,6 +232,164 @@
         });
     </script>
 
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Kho Tài Nguyên Miễn Phí</h2>
+            
+            <!-- Bộ lọc -->
+            <div class="resource-filters">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="pdf">PDF</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+                <button class="filter-btn" data-filter="exam">Đề thi</button>
+            </div>
+
+            <!-- Danh sách tài nguyên -->
+            <div class="resource-grid">
+                <!-- Tài nguyên 1 -->
+                <div class="resource-card" data-category="pdf">
+                    <div class="resource-header">
+                        <i class="fas fa-file-pdf resource-icon"></i>
+                        <div class="resource-meta">
+                            <span class="file-type">PDF</span>
+                            <span class="file-size">2.5 MB</span>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Tổng hợp công thức Toán THPT</h3>
+                        <p class="resource-description">Tài liệu hệ thống toàn bộ công thức Toán 10-12, kèm ví dụ minh họa</p>
+                        <div class="resource-footer">
+                            <span class="pages">15 trang</span>
+                            <div class="actions">
+                                <button class="btn-download"><i class="fas fa-download"></i></button>
+                                <button class="btn-preview"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tài nguyên 2 -->
+                <div class="resource-card" data-category="video">
+                    <div class="resource-header">
+                        <i class="fas fa-video resource-icon"></i>
+                        <div class="resource-meta">
+                            <span class="file-type">MP4</span>
+                            <span class="file-size">45 MB</span>
+                        </div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Hướng dẫn Python cơ bản</h3>
+                        <p class="resource-description">Video bài giảng nhập môn lập trình Python (30 phút)</p>
+                        <div class="resource-footer">
+                            <span class="duration">30 phút</span>
+                            <div class="actions">
+                                <button class="btn-download"><i class="fas fa-download"></i></button>
+                                <button class="btn-preview"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thêm các tài nguyên khác tương tự -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript cho bộ lọc tài nguyên
+        document.querySelectorAll('.resource-filters .filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.resource-filters .filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                const resources = document.querySelectorAll('.resource-card');
+                
+                resources.forEach(resource => {
+                    resource.style.display = 
+                        filter === 'all' || resource.dataset.category === filter 
+                        ? 'block' 
+                        : 'none';
+                });
+            });
+        });
+    </script>    
+
+    <section class="news" id="news">
+        <div class="container">
+            <h2 class="section-title">Tin Tức Giáo Dục</h2>
+            
+            <!-- Bộ lọc -->
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="policy">Chính sách</button>
+                <button class="filter-btn" data-filter="tips">Mẹo học tập</button>
+                <button class="filter-btn" data-filter="events">Sự kiện</button>
+            </div>
+
+            <!-- Danh sách tin tức -->
+            <div class="news-grid">
+                <!-- Bài viết 1 -->
+                <div class="news-card" data-category="policy">
+                    <div class="news-thumbnail">
+                        <img src="./assets/images/tips.jpg" alt="Chính sách">
+                        <span class="news-tag">Chính sách</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Thay đổi quy chế thi THPT Quốc Gia 2025</h3>
+                        <p class="news-description">Bộ GD&ĐT vừa công bố những thay đổi quan trọng trong kỳ thi THPT Quốc Gia 2025...</p>
+                        <div class="news-footer">
+                            <span class="date"><i class="fas fa-calendar-alt"></i> 19/12/2024</span>
+                            <a href="#" class="read-more">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài viết 2 -->
+                <div class="news-card" data-category="tips">
+                    <div class="news-thumbnail">
+                        <img src="./assets/images/tienganh.jpg" alt="Mẹo học tập">
+                        <span class="news-tag">Mẹo học tập</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>5 cách học tiếng Anh hiệu quả tại nhà</h3>
+                        <p class="news-description">Áp dụng các phương pháp học tiếng Anh hiệu quả mà không cần đến trung tâm...</p>
+                        <div class="news-footer">
+                            <span class="date"><i class="fas fa-calendar-alt"></i> 28/12/2024</span>
+                            <a href="#" class="read-more">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thêm các bài viết khác tương tự -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript cho bộ lọc tin tức
+        document.querySelectorAll('.news-filters .filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.news-filters .filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                const newsItems = document.querySelectorAll('.news-card');
+                
+                newsItems.forEach(item => {
+                    item.style.display = 
+                        filter === 'all' || item.dataset.category === filter 
+                        ? 'block' 
+                        : 'none';
+                });
+            });
+        });
+    </script>
+
     <footer>
         <div class="footer-grid">
             <div>
